@@ -1,5 +1,5 @@
 #include "app.hpp"
-#include "controllerlogic.hpp"
+#include "raspberrymaster.hpp"
 
 
 bool app::init(int argc, char* argv[])
@@ -24,13 +24,7 @@ void app::run()
     PLOGI << "Lancement du programme";
     try
     {
-       ControllerLogic controller;
-       sleep(3);
-       controller.objectDetected();
-       sleep(3);
-       controller.dataDetected();
-       sleep(3);
-       controller.dataTransferred();
+       RaspberryMaster master;
     }
     catch(const exception& e)
     {
