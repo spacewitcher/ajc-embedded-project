@@ -1,7 +1,5 @@
 #include "app.hpp"
-#include "pipca9685.h"
-#include "slaveUART.h"
-#include "masterUART.h"
+#include "controllerlogic.hpp"
 
 
 bool app::init(int argc, char* argv[])
@@ -26,14 +24,13 @@ void app::run()
     PLOGI << "Lancement du programme";
     try
     {
-       //PiPCA9685 servoController(1, 0x70);
-       //servoController.initialize();
-       //servoController.move(1, 180);
-       //servoController.move(2, 180);
-        
-        enableMasterUART();
-    
-       
+       ControllerLogic controller;
+       sleep(3);
+       controller.objectDetected();
+       sleep(3);
+       controller.dataDetected();
+       sleep(3);
+       controller.dataTransferred();
     }
     catch(const exception& e)
     {

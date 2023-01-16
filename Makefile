@@ -8,7 +8,7 @@ ifeq ($(CROSS_COMPILE),1)
 # remplacer le compilateur utilisé pour la cross-compilation ici
 	CC	:= ../cross-pi-gcc-10.3.0-2/bin/arm-linux-gnueabihf-g++
 # Nom de l'exécutable cross-compile
-	EXEC		:= app-master-com
+	EXEC		:= app-master
 else 
 	CC	:= g++
 # Nom de l'exécutable

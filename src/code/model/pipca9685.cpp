@@ -25,7 +25,7 @@ void PiPCA9685::initialize(){
     //time.sleep(0.005)  # wait for oscillator
     usleep(5000);
     setPwmFrequency(50);
-    std::cout<<"PCA9685 Initialization: SUCCESS";
+    std::cout<<"PCA9685 Initialization: SUCCESS"<<std::endl;
 }
 
 void PiPCA9685::setPwmFrequency(uint16_t frequency){
@@ -33,10 +33,10 @@ void PiPCA9685::setPwmFrequency(uint16_t frequency){
     prescaleval /= 4096.0;         //12-bit
     prescaleval /= float(frequency);
     prescaleval -= 1.0;
-    std::cout<<"Setting PWM frequency to "<<frequency<<" hz";
-    std::cout<<"Estimated pre-scale: "<<prescaleval;
+    std::cout<<"Setting PWM frequency to "<<frequency<<" hz"<<std::endl;
+    std::cout<<"Estimated pre-scale: "<<prescaleval<<std::endl;
     int prescale = (int)floor(prescaleval + 0.5);
-    std::cout<<"Final pre-scale: "<<prescale;
+    std::cout<<"Final pre-scale: "<<prescale<<std::endl;
     uint8_t oldmode = i2c->readByte8(MODE1);
     uint8_t newmode = (oldmode & 0x7F) | 0x10; // sleep
     i2c->writeByte8(MODE1, newmode);      //go to sleep
@@ -62,9 +62,9 @@ void PiPCA9685::setAllPwm(uint16_t on, uint16_t off){
 }
 
 void PiPCA9685::move(uint8_t channel, int deg){
-    //float pwm = 570.0 + ((deg/180.0) * 1700.0);
-    float pwm = (deg/180.0) * (SERVO_MAX_PULSE - SERVO_MIN_PULSE) + SERVO_MIN_PULSE;
-    //pwm = (4096.0/20000.0) * pwm;
+    float pwm = 570.0 + ((deg/180.0) * 1700.0);
+    //float pwm = (deg/180.0) * (SERVO_MAX_PULSE - SERVO_MIN_PULSE) + SERVO_MIN_PULSE;
+    pwm = (4096.0/20000.0) * pwm;
     setPwm(channel, 0, (int) pwm);
-    std::cout<<"Moving " <<channel<< " and " <<deg<<" degrees";
+    std::cout<<"Moving " <<(int) channel<< " and " <<deg<<" degrees"<<std::endl;
 }
