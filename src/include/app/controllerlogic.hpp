@@ -11,7 +11,6 @@ class ControllerLogic {
         void setYellowServoPosition(int angle);
         void setBlueServoPosition(int angle);
         void objectDetected();
-        void objectNotDetected();
         void dataDetected();
         void dataTransferred();
     

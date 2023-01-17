@@ -66,5 +66,4 @@ void PiPCA9685::move(uint8_t channel, int deg){
     //float pwm = (deg/180.0) * (SERVO_MAX_PULSE - SERVO_MIN_PULSE) + SERVO_MIN_PULSE;
     pwm = (4096.0/20000.0) * pwm;
     setPwm(channel, 0, (int) pwm);
-    std::cout<<"Moving " <<(int) channel<< " and " <<deg<<" degrees"<<std::endl;
 }
