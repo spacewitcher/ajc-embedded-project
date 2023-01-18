@@ -1,4 +1,4 @@
-#include "qi2c.h"
+#include "qi2c.hpp"
 #include <iostream>
 
 QI2C::QI2C(const uint8_t &i2c_bus, const uint8_t &i2c_address) : i2c_bus(i2c_bus), i2c_address(i2c_address)

@@ -1,0 +1,3 @@
+<map id="beaconData" name="beaconData">
+<area shape="rect" id="node1" title="The beaconData struct contains data received from the slave device, such as temperature,..." alt="" coords="5,5,124,156"/>
+</map>

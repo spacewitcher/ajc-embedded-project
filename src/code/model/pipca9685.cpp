@@ -1,4 +1,4 @@
-#include "pipca9685.h"
+#include "pipca9685.hpp"
 #include <iostream>
 #include <cmath>
 

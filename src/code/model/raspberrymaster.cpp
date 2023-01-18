@@ -1,11 +1,11 @@
 #include "raspberrymaster.hpp"
-#include "wiringSerial.h"
 
 RaspberryMaster::RaspberryMaster()
 {
     servomotors = new ControllerLogic();
     receiveDataFromSlave();
 }
+
 
 RaspberryMaster::~RaspberryMaster()
 {
@@ -29,23 +29,23 @@ void RaspberryMaster::receiveDataFromSlave()
         sleep(5);
 
         char* data_ptr = (char*)&data;
-        for(int i=0; i< (int)sizeof(beaconData); i++) {
-        *(data_ptr++) = serialGetchar(fd);
+        for(int i=0; i< (int)sizeof(beaconData); i++) 
+        {
+            *(data_ptr++) = serialGetchar(fd); // Receiving the data from the slave
         }
 
-        servomotors->dataDetected();
+        servomotors->dataDetected(); // Move the blue flag after the data is received
 
         if(data.detect == 1)
         {
-            servomotors->objectDetected();
+            servomotors->objectDetected(); // Move the yellow flag after the presence is detected
         }
 
         changeFormatToJSON(data, jsonData);
+
         std::cout << jsonData.dump() << std::endl;
 
         serialPuts(fd, "A"); // Send confirmation back to the slave
-        
-        servomotors->dataTransferred();
 
         sendDataToServer(jsonData, "135.125.14.131", 5009);
 
@@ -66,6 +66,7 @@ void RaspberryMaster::changeFormatToJSON(beaconData data, json &jsonData)
     jsonData["GY521"]["Rz"] = data.Rz;
     jsonData["HC-SR501"]["presence"] = data.detect;
 }
+
 
 void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int port)
 {
@@ -95,6 +96,8 @@ void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int 
     else {
         std::cout << "Successfully connected to the server" << std::endl;
     }
+
+    servomotors->dataTransferred(); // Move the blue flag before the data is transferred to the server
     
     // Send JSON data to server
     std::string jsonString = jsonData.dump();

@@ -1,0 +1,192 @@
+\hypertarget{class_controller_logic}{}\doxysection{Controller\+Logic Class Reference}
+\label{class_controller_logic}\index{ControllerLogic@{ControllerLogic}}
+
+
+Class for describing the actions that are to be performed by the PCA9685 controller.  
+
+
+
+
+{\ttfamily \#include $<$controllerlogic.\+hpp$>$}
+
+
+
+Collaboration diagram for Controller\+Logic\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_controller_logic__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_controller_logic_a0400312ef57b99ff8c16e586d4726a1c}{Controller\+Logic}} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for the \mbox{\hyperlink{class_controller_logic}{Controller\+Logic}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_controller_logic_abfe9559a6ed4990291a0bc6aacd812cc}{$\sim$\+Controller\+Logic}} ()
+\begin{DoxyCompactList}\small\item\em Default destructor for the \mbox{\hyperlink{class_controller_logic}{Controller\+Logic}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_logic_a8c6858e54060ec4f4a4e792944679cd3}{set\+Yellow\+Servo\+Position}} (int angle)
+\begin{DoxyCompactList}\small\item\em Method to set the angle of the yellow servomotor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_logic_a18726bd902dc4a715531e0de648c0003}{set\+Blue\+Servo\+Position}} (int angle)
+\begin{DoxyCompactList}\small\item\em Method to set the angle of the blue servomotor. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_logic_a7ef90d04f3ec00e0e3a2fa5556f7fd6c}{object\+Detected}} ()
+\begin{DoxyCompactList}\small\item\em Method to control the movement of the yellow servomotor when an object is detected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_logic_a75c37165b3a0e5702c979d2b300fb078}{data\+Detected}} ()
+\begin{DoxyCompactList}\small\item\em Method to control the movement of the blue servomotor when data is detected. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_controller_logic_ac2ea34b159155bcbdf3c58ca64abf5ba}{data\+Transferred}} ()
+\begin{DoxyCompactList}\small\item\em Method to control the movement of the blue servomotor when data is transferred. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} $\ast$ \mbox{\hyperlink{class_controller_logic_a7f292cc4a1874b55c53ed8020e2f5fd8}{servo\+Controller}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} object. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_logic_ae5f6c8dfadfb47a1ecbd143fc9f2a00b}{yellow\+Servo\+Position}} = 0
+\begin{DoxyCompactList}\small\item\em Current position of the yellow flag initialized to 0 degrees. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_controller_logic_a95e8739264d779a78100bf4675e99960}{blue\+Servo\+Position}} = 180
+\begin{DoxyCompactList}\small\item\em Current position of the blue flag initialized to 180 degrees. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for describing the actions that are to be performed by the PCA9685 controller. 
+
+This class describes the different actions which are to be performed by the PCA9685 controller. It allows to control the position of the yellow and blue flags via servomotors. Certain actions are programmed after receiving specific data from the Slave Raspberry Pi and before sending data to the TCP server on which all the data monitored by the Slave is stored. 
+
+Definition at line 25 of file controllerlogic.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_controller_logic_a0400312ef57b99ff8c16e586d4726a1c}\label{class_controller_logic_a0400312ef57b99ff8c16e586d4726a1c}} 
+\index{ControllerLogic@{ControllerLogic}!ControllerLogic@{ControllerLogic}}
+\index{ControllerLogic@{ControllerLogic}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{ControllerLogic()}{ControllerLogic()}}
+{\footnotesize\ttfamily Controller\+Logic\+::\+Controller\+Logic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default constructor for the \mbox{\hyperlink{class_controller_logic}{Controller\+Logic}} class. 
+
+This constructor creates an instance of the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class, initializes the servomotors, and sets the initial positions of the servomotors. \mbox{\Hypertarget{class_controller_logic_abfe9559a6ed4990291a0bc6aacd812cc}\label{class_controller_logic_abfe9559a6ed4990291a0bc6aacd812cc}} 
+\index{ControllerLogic@{ControllerLogic}!````~ControllerLogic@{$\sim$ControllerLogic}}
+\index{````~ControllerLogic@{$\sim$ControllerLogic}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{$\sim$ControllerLogic()}{~ControllerLogic()}}
+{\footnotesize\ttfamily Controller\+Logic\+::$\sim$\+Controller\+Logic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Default destructor for the \mbox{\hyperlink{class_controller_logic}{Controller\+Logic}} class. 
+
+This destructor sets the servomotors to the initial position before destroying the object 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_controller_logic_a75c37165b3a0e5702c979d2b300fb078}\label{class_controller_logic_a75c37165b3a0e5702c979d2b300fb078}} 
+\index{ControllerLogic@{ControllerLogic}!dataDetected@{dataDetected}}
+\index{dataDetected@{dataDetected}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{dataDetected()}{dataDetected()}}
+{\footnotesize\ttfamily void Controller\+Logic\+::data\+Detected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to control the movement of the blue servomotor when data is detected. 
+
+\mbox{\Hypertarget{class_controller_logic_ac2ea34b159155bcbdf3c58ca64abf5ba}\label{class_controller_logic_ac2ea34b159155bcbdf3c58ca64abf5ba}} 
+\index{ControllerLogic@{ControllerLogic}!dataTransferred@{dataTransferred}}
+\index{dataTransferred@{dataTransferred}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{dataTransferred()}{dataTransferred()}}
+{\footnotesize\ttfamily void Controller\+Logic\+::data\+Transferred (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to control the movement of the blue servomotor when data is transferred. 
+
+\mbox{\Hypertarget{class_controller_logic_a7ef90d04f3ec00e0e3a2fa5556f7fd6c}\label{class_controller_logic_a7ef90d04f3ec00e0e3a2fa5556f7fd6c}} 
+\index{ControllerLogic@{ControllerLogic}!objectDetected@{objectDetected}}
+\index{objectDetected@{objectDetected}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{objectDetected()}{objectDetected()}}
+{\footnotesize\ttfamily void Controller\+Logic\+::object\+Detected (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Method to control the movement of the yellow servomotor when an object is detected. 
+
+\mbox{\Hypertarget{class_controller_logic_a18726bd902dc4a715531e0de648c0003}\label{class_controller_logic_a18726bd902dc4a715531e0de648c0003}} 
+\index{ControllerLogic@{ControllerLogic}!setBlueServoPosition@{setBlueServoPosition}}
+\index{setBlueServoPosition@{setBlueServoPosition}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{setBlueServoPosition()}{setBlueServoPosition()}}
+{\footnotesize\ttfamily void Controller\+Logic\+::set\+Blue\+Servo\+Position (\begin{DoxyParamCaption}\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+Method to set the angle of the blue servomotor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle to set the servomotor to \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_controller_logic_a8c6858e54060ec4f4a4e792944679cd3}\label{class_controller_logic_a8c6858e54060ec4f4a4e792944679cd3}} 
+\index{ControllerLogic@{ControllerLogic}!setYellowServoPosition@{setYellowServoPosition}}
+\index{setYellowServoPosition@{setYellowServoPosition}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{setYellowServoPosition()}{setYellowServoPosition()}}
+{\footnotesize\ttfamily void Controller\+Logic\+::set\+Yellow\+Servo\+Position (\begin{DoxyParamCaption}\item[{int}]{angle }\end{DoxyParamCaption})}
+
+
+
+Method to set the angle of the yellow servomotor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & The angle to set the servomotor to \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_controller_logic_a95e8739264d779a78100bf4675e99960}\label{class_controller_logic_a95e8739264d779a78100bf4675e99960}} 
+\index{ControllerLogic@{ControllerLogic}!blueServoPosition@{blueServoPosition}}
+\index{blueServoPosition@{blueServoPosition}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{blueServoPosition}{blueServoPosition}}
+{\footnotesize\ttfamily int Controller\+Logic\+::blue\+Servo\+Position = 180\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current position of the blue flag initialized to 180 degrees. 
+
+
+
+Definition at line 88 of file controllerlogic.\+hpp.
+
+\mbox{\Hypertarget{class_controller_logic_a7f292cc4a1874b55c53ed8020e2f5fd8}\label{class_controller_logic_a7f292cc4a1874b55c53ed8020e2f5fd8}} 
+\index{ControllerLogic@{ControllerLogic}!servoController@{servoController}}
+\index{servoController@{servoController}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{servoController}{servoController}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}}$\ast$ Controller\+Logic\+::servo\+Controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} object. 
+
+
+
+Definition at line 78 of file controllerlogic.\+hpp.
+
+\mbox{\Hypertarget{class_controller_logic_ae5f6c8dfadfb47a1ecbd143fc9f2a00b}\label{class_controller_logic_ae5f6c8dfadfb47a1ecbd143fc9f2a00b}} 
+\index{ControllerLogic@{ControllerLogic}!yellowServoPosition@{yellowServoPosition}}
+\index{yellowServoPosition@{yellowServoPosition}!ControllerLogic@{ControllerLogic}}
+\doxysubsubsection{\texorpdfstring{yellowServoPosition}{yellowServoPosition}}
+{\footnotesize\ttfamily int Controller\+Logic\+::yellow\+Servo\+Position = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Current position of the yellow flag initialized to 0 degrees. 
+
+
+
+Definition at line 83 of file controllerlogic.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+AJC\+\_\+final-\/master/src/include/model/\mbox{\hyperlink{controllerlogic_8hpp}{controllerlogic.\+hpp}}\end{DoxyCompactItemize}

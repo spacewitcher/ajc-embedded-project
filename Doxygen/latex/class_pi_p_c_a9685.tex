@@ -1,0 +1,217 @@
+\hypertarget{class_pi_p_c_a9685}{}\doxysection{Pi\+PCA9685 Class Reference}
+\label{class_pi_p_c_a9685}\index{PiPCA9685@{PiPCA9685}}
+
+
+Class for controlling the PCA9685 PWM chip.  
+
+
+
+
+{\ttfamily \#include $<$pipca9685.\+hpp$>$}
+
+
+
+Collaboration diagram for Pi\+PCA9685\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_pi_p_c_a9685__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_pi_p_c_a9685_a628508697fdbf2a28ef0698b4b394636}{Pi\+PCA9685}} (uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_a6447d3e6a26368233ea0561f1cd538e8}{i2c\+\_\+bus}}, uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_ad21fc57dc58ca0e0c3427eb692704271}{i2c\+\_\+address}})
+\begin{DoxyCompactList}\small\item\em Constructor for the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_pi_p_c_a9685_a467ecc8f4328e39888c6667767f4a861}{$\sim$\+Pi\+PCA9685}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pi_p_c_a9685_a1e733542bd1f8961abbe88a3a18f7b73}{initialize}} ()
+\begin{DoxyCompactList}\small\item\em Initialize the PCA9685 chip. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pi_p_c_a9685_a168125186dba5e792dbed2a13c3d08bf}{set\+Pwm\+Frequency}} (uint16\+\_\+t frequency)
+\begin{DoxyCompactList}\small\item\em Set the PWM frequency for all channels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pi_p_c_a9685_ae5819bd339c7a900af4bcd1364c3e501}{set\+Pwm}} (uint8\+\_\+t channel, uint16\+\_\+t on, uint16\+\_\+t off)
+\begin{DoxyCompactList}\small\item\em Set the PWM duty cycle for a specific channel. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pi_p_c_a9685_a49c9ae04d27b1ef6405d62daf218d7ff}{set\+All\+Pwm}} (uint16\+\_\+t on, uint16\+\_\+t off)
+\begin{DoxyCompactList}\small\item\em Set the PWM duty cycle for all channels. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_pi_p_c_a9685_aef47addc667224f8ea7f2f4ae6a4b4a2}{move}} (uint8\+\_\+t channel, int deg)
+\begin{DoxyCompactList}\small\item\em Move the servo to the specified degree. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_q_i2_c}{QI2C}} $\ast$ \mbox{\hyperlink{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}{i2c}}
+\begin{DoxyCompactList}\small\item\em I2C interface object. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_a6447d3e6a26368233ea0561f1cd538e8}{i2c\+\_\+bus}}
+\begin{DoxyCompactList}\small\item\em I2C bus number. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_ad21fc57dc58ca0e0c3427eb692704271}{i2c\+\_\+address}}
+\begin{DoxyCompactList}\small\item\em I2C address of the PCA9685 chip. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for controlling the PCA9685 PWM chip. 
+
+This class provides an interface for controlling the PCA9685 PWM chip using the I2C bus on a Raspberry Pi. It allows to change the positions of the servomotors based on the desired angle (in degrees). 
+
+Definition at line 89 of file pipca9685.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a628508697fdbf2a28ef0698b4b394636}\label{class_pi_p_c_a9685_a628508697fdbf2a28ef0698b4b394636}} 
+\index{PiPCA9685@{PiPCA9685}!PiPCA9685@{PiPCA9685}}
+\index{PiPCA9685@{PiPCA9685}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{PiPCA9685()}{PiPCA9685()}}
+{\footnotesize\ttfamily Pi\+PCA9685\+::\+Pi\+PCA9685 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{i2c\+\_\+bus,  }\item[{uint8\+\_\+t}]{i2c\+\_\+address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Constructor for the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+bus} & I2C bus number \\
+\hline
+{\em i2c\+\_\+address} & I2C address of the PCA9685 chip \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a467ecc8f4328e39888c6667767f4a861}\label{class_pi_p_c_a9685_a467ecc8f4328e39888c6667767f4a861}} 
+\index{PiPCA9685@{PiPCA9685}!````~PiPCA9685@{$\sim$PiPCA9685}}
+\index{````~PiPCA9685@{$\sim$PiPCA9685}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{$\sim$PiPCA9685()}{~PiPCA9685()}}
+{\footnotesize\ttfamily Pi\+PCA9685\+::$\sim$\+Pi\+PCA9685 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a1e733542bd1f8961abbe88a3a18f7b73}\label{class_pi_p_c_a9685_a1e733542bd1f8961abbe88a3a18f7b73}} 
+\index{PiPCA9685@{PiPCA9685}!initialize@{initialize}}
+\index{initialize@{initialize}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{initialize()}{initialize()}}
+{\footnotesize\ttfamily void Pi\+PCA9685\+::initialize (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initialize the PCA9685 chip. 
+
+\mbox{\Hypertarget{class_pi_p_c_a9685_aef47addc667224f8ea7f2f4ae6a4b4a2}\label{class_pi_p_c_a9685_aef47addc667224f8ea7f2f4ae6a4b4a2}} 
+\index{PiPCA9685@{PiPCA9685}!move@{move}}
+\index{move@{move}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void Pi\+PCA9685\+::move (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{int}]{deg }\end{DoxyParamCaption})}
+
+
+
+Move the servo to the specified degree. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & PWM channel (0-\/15) \\
+\hline
+{\em deg} & Degrees to move \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a49c9ae04d27b1ef6405d62daf218d7ff}\label{class_pi_p_c_a9685_a49c9ae04d27b1ef6405d62daf218d7ff}} 
+\index{PiPCA9685@{PiPCA9685}!setAllPwm@{setAllPwm}}
+\index{setAllPwm@{setAllPwm}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{setAllPwm()}{setAllPwm()}}
+{\footnotesize\ttfamily void Pi\+PCA9685\+::set\+All\+Pwm (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})}
+
+
+
+Set the PWM duty cycle for all channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em on} & Duty cycle on time in ticks \\
+\hline
+{\em off} & Duty cycle off time in ticks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pi_p_c_a9685_ae5819bd339c7a900af4bcd1364c3e501}\label{class_pi_p_c_a9685_ae5819bd339c7a900af4bcd1364c3e501}} 
+\index{PiPCA9685@{PiPCA9685}!setPwm@{setPwm}}
+\index{setPwm@{setPwm}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{setPwm()}{setPwm()}}
+{\footnotesize\ttfamily void Pi\+PCA9685\+::set\+Pwm (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{channel,  }\item[{uint16\+\_\+t}]{on,  }\item[{uint16\+\_\+t}]{off }\end{DoxyParamCaption})}
+
+
+
+Set the PWM duty cycle for a specific channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em channel} & PWM channel (0-\/15) \\
+\hline
+{\em on} & Duty cycle on time in ticks \\
+\hline
+{\em off} & Duty cycle off time in ticks \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a168125186dba5e792dbed2a13c3d08bf}\label{class_pi_p_c_a9685_a168125186dba5e792dbed2a13c3d08bf}} 
+\index{PiPCA9685@{PiPCA9685}!setPwmFrequency@{setPwmFrequency}}
+\index{setPwmFrequency@{setPwmFrequency}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{setPwmFrequency()}{setPwmFrequency()}}
+{\footnotesize\ttfamily void Pi\+PCA9685\+::set\+Pwm\+Frequency (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{frequency }\end{DoxyParamCaption})}
+
+
+
+Set the PWM frequency for all channels. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em frequency} & PWM frequency in Hz \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}\label{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}} 
+\index{PiPCA9685@{PiPCA9685}!i2c@{i2c}}
+\index{i2c@{i2c}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{i2c}{i2c}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_q_i2_c}{QI2C}}$\ast$ Pi\+PCA9685\+::i2c\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I2C interface object. 
+
+
+
+Definition at line 138 of file pipca9685.\+hpp.
+
+\mbox{\Hypertarget{class_pi_p_c_a9685_ad21fc57dc58ca0e0c3427eb692704271}\label{class_pi_p_c_a9685_ad21fc57dc58ca0e0c3427eb692704271}} 
+\index{PiPCA9685@{PiPCA9685}!i2c\_address@{i2c\_address}}
+\index{i2c\_address@{i2c\_address}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{i2c\_address}{i2c\_address}}
+{\footnotesize\ttfamily const uint8\+\_\+t Pi\+PCA9685\+::i2c\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I2C address of the PCA9685 chip. 
+
+
+
+Definition at line 147 of file pipca9685.\+hpp.
+
+\mbox{\Hypertarget{class_pi_p_c_a9685_a6447d3e6a26368233ea0561f1cd538e8}\label{class_pi_p_c_a9685_a6447d3e6a26368233ea0561f1cd538e8}} 
+\index{PiPCA9685@{PiPCA9685}!i2c\_bus@{i2c\_bus}}
+\index{i2c\_bus@{i2c\_bus}!PiPCA9685@{PiPCA9685}}
+\doxysubsubsection{\texorpdfstring{i2c\_bus}{i2c\_bus}}
+{\footnotesize\ttfamily const uint8\+\_\+t Pi\+PCA9685\+::i2c\+\_\+bus\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+I2C bus number. 
+
+
+
+Definition at line 143 of file pipca9685.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+AJC\+\_\+final-\/master/src/include/model/\mbox{\hyperlink{pipca9685_8hpp}{pipca9685.\+hpp}}\end{DoxyCompactItemize}

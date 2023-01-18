@@ -31,13 +31,10 @@ void ControllerLogic::setBlueServoPosition(int angle)
 
 void ControllerLogic::objectDetected()
 {
-    isObjectDetected = true;
     std::cout<<"MOVING YELLOW FLAG - An object has been detected"<<std::endl; 
     setYellowServoPosition(90);
     sleep(2);
-
-    //Go to the rest position
-    setYellowServoPosition(180);
+    setYellowServoPosition(180); // Go to the resting position
 }
 
 void ControllerLogic::dataDetected()
@@ -47,23 +44,24 @@ void ControllerLogic::dataDetected()
     auto end = start + std::chrono::seconds(SWEEP_TIME);
 
     while (std::chrono::high_resolution_clock::now() < end) {
+
+        // Oscillate between 45 and 135 degrees
         setBlueServoPosition(45);
         sleep(1);
         setBlueServoPosition(135);
         sleep(1);
     }
 
-    setBlueServoPosition(180);
+    setBlueServoPosition(180); //Go back to initial position
 }
 
 void ControllerLogic::dataTransferred()
 {
     std::cout<<"MOVING BLUE FLAG - Transferring data to the TCP server"<<std::endl; 
+
     setBlueServoPosition(90);
-    
     sleep(1);
-    //Go back to initial position
-    setBlueServoPosition(180);
+    setBlueServoPosition(180); //Go back to initial position
 }
 
 
