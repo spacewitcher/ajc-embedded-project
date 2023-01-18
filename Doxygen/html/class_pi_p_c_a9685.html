@@ -81,8 +81,8 @@ Collaboration diagram for PiPCA9685:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_pi_p_c_a9685__coll__graph.png" border="0" usemap="#a_pi_p_c_a9685_coll__map" alt="Collaboration graph"/></div>
 <map name="a_pi_p_c_a9685_coll__map" id="a_pi_p_c_a9685_coll__map">
-<area shape="rect" title="Class for controlling the PCA9685 PWM chip." alt="" coords="5,248,172,428"/>
-<area shape="rect" href="class_q_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="9,5,168,185"/>
+<area shape="rect" title="Class for controlling the PCA9685 PWM chip." alt="" coords="5,277,220,560"/>
+<area shape="rect" href="class_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="15,5,211,215"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -112,19 +112,19 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
-<tr class="memitem:a5bdf65f7d24eb4b1be2cb4db6e600e84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_q_i2_c.html">QI2C</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pi_p_c_a9685.html#a5bdf65f7d24eb4b1be2cb4db6e600e84">i2c</a></td></tr>
-<tr class="memdesc:a5bdf65f7d24eb4b1be2cb4db6e600e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C interface object.  <a href="class_pi_p_c_a9685.html#a5bdf65f7d24eb4b1be2cb4db6e600e84">More...</a><br /></td></tr>
-<tr class="separator:a5bdf65f7d24eb4b1be2cb4db6e600e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4047475f667a3f89ede6c86dd1187a7b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_i2_c.html">I2C</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pi_p_c_a9685.html#a4047475f667a3f89ede6c86dd1187a7b">i2c</a></td></tr>
+<tr class="memdesc:a4047475f667a3f89ede6c86dd1187a7b"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> interface object.  <a href="class_pi_p_c_a9685.html#a4047475f667a3f89ede6c86dd1187a7b">More...</a><br /></td></tr>
+<tr class="separator:a4047475f667a3f89ede6c86dd1187a7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6447d3e6a26368233ea0561f1cd538e8"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pi_p_c_a9685.html#a6447d3e6a26368233ea0561f1cd538e8">i2c_bus</a></td></tr>
-<tr class="memdesc:a6447d3e6a26368233ea0561f1cd538e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C bus number.  <a href="class_pi_p_c_a9685.html#a6447d3e6a26368233ea0561f1cd538e8">More...</a><br /></td></tr>
+<tr class="memdesc:a6447d3e6a26368233ea0561f1cd538e8"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> bus number.  <a href="class_pi_p_c_a9685.html#a6447d3e6a26368233ea0561f1cd538e8">More...</a><br /></td></tr>
 <tr class="separator:a6447d3e6a26368233ea0561f1cd538e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad21fc57dc58ca0e0c3427eb692704271"><td class="memItemLeft" align="right" valign="top">const uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_pi_p_c_a9685.html#ad21fc57dc58ca0e0c3427eb692704271">i2c_address</a></td></tr>
-<tr class="memdesc:ad21fc57dc58ca0e0c3427eb692704271"><td class="mdescLeft">&#160;</td><td class="mdescRight">I2C address of the PCA9685 chip.  <a href="class_pi_p_c_a9685.html#ad21fc57dc58ca0e0c3427eb692704271">More...</a><br /></td></tr>
+<tr class="memdesc:ad21fc57dc58ca0e0c3427eb692704271"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> address of the PCA9685 chip.  <a href="class_pi_p_c_a9685.html#ad21fc57dc58ca0e0c3427eb692704271">More...</a><br /></td></tr>
 <tr class="separator:ad21fc57dc58ca0e0c3427eb692704271"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class for controlling the PCA9685 PWM chip. </p>
-<p>This class provides an interface for controlling the PCA9685 PWM chip using the I2C bus on a Raspberry Pi. It allows to change the positions of the servomotors based on the desired angle (in degrees). </p>
+<p>This class provides an interface for controlling the PCA9685 PWM chip using the <a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> bus on a Raspberry Pi. It allows to change the positions of the servomotors based on the desired angle (in degrees). </p>
 
 <p class="definition">Definition at line <a class="el" href="pipca9685_8hpp_source.html#l00089">89</a> of file <a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
@@ -165,8 +165,8 @@ Private Attributes</h2></td></tr>
 <p>Constructor for the <a class="el" href="class_pi_p_c_a9685.html" title="Class for controlling the PCA9685 PWM chip.">PiPCA9685</a> class. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">i2c_bus</td><td>I2C bus number </td></tr>
-    <tr><td class="paramname">i2c_address</td><td>I2C address of the PCA9685 chip </td></tr>
+    <tr><td class="paramname">i2c_bus</td><td><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> bus number </td></tr>
+    <tr><td class="paramname">i2c_address</td><td><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> address of the PCA9685 chip </td></tr>
   </table>
   </dd>
 </dl>
@@ -357,8 +357,8 @@ Private Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="a5bdf65f7d24eb4b1be2cb4db6e600e84"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5bdf65f7d24eb4b1be2cb4db6e600e84">&#9670;&nbsp;</a></span>i2c</h2>
+<a id="a4047475f667a3f89ede6c86dd1187a7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4047475f667a3f89ede6c86dd1187a7b">&#9670;&nbsp;</a></span>i2c</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -367,7 +367,7 @@ Private Attributes</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="class_q_i2_c.html">QI2C</a>* PiPCA9685::i2c</td>
+          <td class="memname"><a class="el" href="class_i2_c.html">I2C</a>* PiPCA9685::i2c</td>
         </tr>
       </table>
   </td>
@@ -377,7 +377,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>I2C interface object. </p>
+<p><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> interface object. </p>
 
 <p class="definition">Definition at line <a class="el" href="pipca9685_8hpp_source.html#l00138">138</a> of file <a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a>.</p>
 
@@ -403,7 +403,7 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>I2C address of the PCA9685 chip. </p>
+<p><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> address of the PCA9685 chip. </p>
 
 <p class="definition">Definition at line <a class="el" href="pipca9685_8hpp_source.html#l00147">147</a> of file <a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a>.</p>
 
@@ -429,14 +429,14 @@ Private Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>I2C bus number. </p>
+<p><a class="el" href="class_i2_c.html" title="Class for controlling the I2C bus.">I2C</a> bus number. </p>
 
 <p class="definition">Definition at line <a class="el" href="pipca9685_8hpp_source.html#l00143">143</a> of file <a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>AJC_final-master/src/include/model/<a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a></li>
+<li>/home/jurek/Documents/AJC_final-master/AJC_final-master/src/include/model/<a class="el" href="pipca9685_8hpp_source.html">pipca9685.hpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

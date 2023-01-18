@@ -11,14 +11,13 @@
 #ifndef	__RASPBERRYMASTER_HPP__
 #define	__RASPBERRYMASTER_HPP__
 
-#include <sys/types.h>
+//#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
-#include <unistd.h>
 #include <json.hpp>
 #include <iostream>
-#include <unistd.h>
+//#include <unistd.h>
 #include <termios.h>
 #include "wiringSerial.h"
 
@@ -51,7 +50,7 @@ struct beaconData {
 
 /**
  * @class RaspberryMaster
- * @brief The RaspberryMaster class is used for communication between the Raspberry Pi, the slave device and the TCP remote server.
+ * @brief The RaspberryMaster class is used for communication between the Master device, the slave device and the TCP remote server.
  *        It contains methods for receiving data from the slave device, changing the format of the data to JSON, and sending the data to a server.
  *        It also dictates when the servocontroller should perform its actions.
  */

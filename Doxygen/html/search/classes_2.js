@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pipca9685_103',['PiPCA9685',['../class_pi_p_c_a9685.html',1,'']]]
+  ['i2c_104',['I2C',['../class_i2_c.html',1,'']]]
 ];

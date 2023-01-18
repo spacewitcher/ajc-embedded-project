@@ -10,7 +10,7 @@
 #ifndef PIPCA9685_HPP
 #define PIPCA9685_HPP
 
-#include "qi2c.hpp"
+#include "i2c.hpp"
 
 /** @brief Register address for Mode 1 */
 #define MODE1			0x00
@@ -135,7 +135,7 @@ private:
     /**
      * @brief I2C interface object
      */
-    QI2C *i2c;
+    I2C *i2c;
 
     /**
      * @brief I2C bus number

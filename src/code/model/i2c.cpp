@@ -1,16 +1,16 @@
-#include "qi2c.hpp"
+#include "i2c.hpp"
 #include <iostream>
 
-QI2C::QI2C(const uint8_t &i2c_bus, const uint8_t &i2c_address) : i2c_bus(i2c_bus), i2c_address(i2c_address)
+I2C::I2C(const uint8_t &i2c_bus, const uint8_t &i2c_address) : i2c_bus(i2c_bus), i2c_address(i2c_address)
 {
     i2cInit();
 }
 
-QI2C::~QI2C(){
+I2C::~I2C(){
     i2cClose();
 }
 
-void QI2C::i2cInit()
+void I2C::i2cInit()
 {
     char filename[32];
     sprintf(filename,"/dev/i2c-%d",i2c_bus);
@@ -25,12 +25,12 @@ void QI2C::i2cInit()
     }
 }
 
-void QI2C::i2cClose()
+void I2C::i2cClose()
 {
     close(fd);
 }
 
-uint8_t QI2C::readBit8(uint8_t registerAddress, uint8_t bitNumber)
+uint8_t I2C::readBit8(uint8_t registerAddress, uint8_t bitNumber)
 {
     uint8_t buffer[1] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -44,7 +44,7 @@ uint8_t QI2C::readBit8(uint8_t registerAddress, uint8_t bitNumber)
     return result_buffer[0] & (1 << bitNumber);
 }
 
-uint8_t QI2C::readBit16(uint16_t registerAddress, uint8_t bitNumber)
+uint8_t I2C::readBit16(uint16_t registerAddress, uint8_t bitNumber)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress >> 8;
@@ -59,7 +59,7 @@ uint8_t QI2C::readBit16(uint16_t registerAddress, uint8_t bitNumber)
     return result_buffer[0] & (1 << bitNumber);
 }
 
-uint8_t QI2C::readBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t length) {
+uint8_t I2C::readBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t length) {
     // 01101001 read byte
     // 76543210 bit numbers
     //    xxx   args: bitStart=4, length=3
@@ -83,7 +83,7 @@ uint8_t QI2C::readBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t lengt
     return result_buffer[0];
 }
 
-uint8_t QI2C::readBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t length) {
+uint8_t I2C::readBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t length) {
     // 01101001 read byte
     // 76543210 bit numbers
     //    xxx   args: bitStart=4, length=3
@@ -108,7 +108,7 @@ uint8_t QI2C::readBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t len
     return result_buffer[0];
 }
 
-uint8_t QI2C::readByte8(uint8_t registerAddress)
+uint8_t I2C::readByte8(uint8_t registerAddress)
 {
     uint8_t buffer[1] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -123,7 +123,7 @@ uint8_t QI2C::readByte8(uint8_t registerAddress)
     return result_buffer[0];
 }
 
-uint8_t QI2C::readByte16(uint16_t registerAddress)
+uint8_t I2C::readByte16(uint16_t registerAddress)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress >> 8;
@@ -139,7 +139,7 @@ uint8_t QI2C::readByte16(uint16_t registerAddress)
     return result_buffer[0];
 }
 
-void QI2C::readBytes8(uint8_t registerAddress, uint8_t length, uint8_t *data){
+void I2C::readBytes8(uint8_t registerAddress, uint8_t length, uint8_t *data){
     uint8_t buffer[1] = {0};
     buffer[0] = registerAddress & 0x00FF;
     write(fd, buffer, 1);
@@ -150,7 +150,7 @@ void QI2C::readBytes8(uint8_t registerAddress, uint8_t length, uint8_t *data){
     }
 }
 
-void QI2C::readBytes16(uint16_t registerAddress, uint8_t length, uint8_t *data){
+void I2C::readBytes16(uint16_t registerAddress, uint8_t length, uint8_t *data){
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress >> 8;
     buffer[1] = registerAddress & 0x00FF;
@@ -162,7 +162,7 @@ void QI2C::readBytes16(uint16_t registerAddress, uint8_t length, uint8_t *data){
     }
 }
 
-uint16_t QI2C::readWord8(uint8_t registerAddress)
+uint16_t I2C::readWord8(uint8_t registerAddress)
 {
     uint8_t buffer[1] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -180,7 +180,7 @@ uint16_t QI2C::readWord8(uint8_t registerAddress)
    return result;
 }
 
-uint16_t QI2C::readWord16(uint16_t registerAddress)
+uint16_t I2C::readWord16(uint16_t registerAddress)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress >> 8;
@@ -199,7 +199,7 @@ uint16_t QI2C::readWord16(uint16_t registerAddress)
    return result;
 }
 
-uint16_t QI2C::readWord8_2c(uint8_t registerAddress)
+uint16_t I2C::readWord8_2c(uint8_t registerAddress)
 {
     uint16_t word = readWord16(registerAddress);
     if (word >= 0x8000)         // 32768
@@ -208,7 +208,7 @@ uint16_t QI2C::readWord8_2c(uint8_t registerAddress)
        return word;
 }
 
-uint16_t QI2C::readWord16_2c(uint16_t registerAddress)
+uint16_t I2C::readWord16_2c(uint16_t registerAddress)
 {
     uint16_t word = readWord16(registerAddress);
     if (word >= 0x8000)         // 32768
@@ -217,7 +217,7 @@ uint16_t QI2C::readWord16_2c(uint16_t registerAddress)
        return word;
 }
 
-uint32_t QI2C::readDoubleWord16(uint16_t registerAddress)
+uint32_t I2C::readDoubleWord16(uint16_t registerAddress)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress >> 8;
@@ -236,7 +236,7 @@ uint32_t QI2C::readDoubleWord16(uint16_t registerAddress)
    return result;
 }
 
-bool QI2C::writeBit8(uint8_t registerAddress, uint8_t bitNumber, uint8_t data)
+bool I2C::writeBit8(uint8_t registerAddress, uint8_t bitNumber, uint8_t data)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -249,7 +249,7 @@ bool QI2C::writeBit8(uint8_t registerAddress, uint8_t bitNumber, uint8_t data)
     return true;
 }
 
-bool QI2C::writeBit16(uint16_t registerAddress, uint8_t bitNumber, uint8_t data)
+bool I2C::writeBit16(uint16_t registerAddress, uint8_t bitNumber, uint8_t data)
 {
     uint8_t buffer[3] = {0};
     buffer[0] = registerAddress >> 8;
@@ -263,7 +263,7 @@ bool QI2C::writeBit16(uint16_t registerAddress, uint8_t bitNumber, uint8_t data)
     return true;
 }
 
-bool QI2C::writeBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t length, uint8_t data) {
+bool I2C::writeBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t length, uint8_t data) {
     //      010 value to write
     // 76543210 bit numbers
     //    xxx   args: bitStart=4, length=3
@@ -288,7 +288,7 @@ bool QI2C::writeBits8(uint8_t registerAddress, uint8_t bitStart, uint8_t length,
     return true;
 }
 
-bool QI2C::writeBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t length, uint8_t data) {
+bool I2C::writeBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t length, uint8_t data) {
     //      010 value to write
     // 76543210 bit numbers
     //    xxx   args: bitStart=4, length=3
@@ -314,7 +314,7 @@ bool QI2C::writeBits16(uint16_t registerAddress, uint8_t bitStart, uint8_t lengt
     return true;
 }
 
-bool QI2C::writeByte8(uint8_t registerAddress, uint8_t data)
+bool I2C::writeByte8(uint8_t registerAddress, uint8_t data)
 {
     uint8_t buffer[2] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -327,7 +327,7 @@ bool QI2C::writeByte8(uint8_t registerAddress, uint8_t data)
     return true;
 }
 
-bool QI2C::writeByte16(uint16_t registerAddress, uint8_t data)
+bool I2C::writeByte16(uint16_t registerAddress, uint8_t data)
 {
     uint8_t buffer[3] = {0};
     buffer[0] = registerAddress >> 8;
@@ -341,7 +341,7 @@ bool QI2C::writeByte16(uint16_t registerAddress, uint8_t data)
     return true;
 }
 
-bool QI2C::writeBytes8(uint8_t registerAddress, uint8_t lenght, uint8_t *data){
+bool I2C::writeBytes8(uint8_t registerAddress, uint8_t lenght, uint8_t *data){
     for(int i=0;i<lenght;i++){
         if(!writeByte8(registerAddress+i, data[i]))
             return false;
@@ -349,7 +349,7 @@ bool QI2C::writeBytes8(uint8_t registerAddress, uint8_t lenght, uint8_t *data){
     return true;
 }
 
-bool QI2C::writeBytes16(uint16_t registerAddress, uint8_t lenght, uint8_t *data){
+bool I2C::writeBytes16(uint16_t registerAddress, uint8_t lenght, uint8_t *data){
     for(int i=0;i<lenght;i++){
         if(!writeByte16(registerAddress+i, data[i]))
             return false;
@@ -357,7 +357,7 @@ bool QI2C::writeBytes16(uint16_t registerAddress, uint8_t lenght, uint8_t *data)
     return true;
 }
 
-bool QI2C::writeWord8(uint8_t registerAddress, uint16_t data)
+bool I2C::writeWord8(uint8_t registerAddress, uint16_t data)
 {
     uint8_t buffer[4] = {0};
     buffer[0] = registerAddress & 0x00FF;
@@ -371,7 +371,7 @@ bool QI2C::writeWord8(uint8_t registerAddress, uint16_t data)
     return true;
 }
 
-bool QI2C::writeWord16(uint16_t registerAddress, uint16_t data)
+bool I2C::writeWord16(uint16_t registerAddress, uint16_t data)
 {
     uint8_t buffer[4] = {0};
     buffer[0] = registerAddress >> 8;
@@ -386,7 +386,7 @@ bool QI2C::writeWord16(uint16_t registerAddress, uint16_t data)
     return true;
 }
 
-bool QI2C::writeDoubleWord(uint16_t registerAddress, uint32_t data)
+bool I2C::writeDoubleWord(uint16_t registerAddress, uint32_t data)
 {
     uint8_t buffer[6] = {0};
     buffer[0] = registerAddress >> 8;

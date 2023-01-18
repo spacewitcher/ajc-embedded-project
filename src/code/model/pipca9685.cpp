@@ -7,7 +7,7 @@
 
 PiPCA9685::PiPCA9685(uint8_t i2c_bus, uint8_t i2c_address) : i2c_bus(i2c_bus), i2c_address(i2c_address)
 {
-    i2c = new QI2C(i2c_bus,i2c_address);
+    i2c = new I2C(i2c_bus,i2c_address);
 }
 
 PiPCA9685::~PiPCA9685(){
@@ -63,7 +63,6 @@ void PiPCA9685::setAllPwm(uint16_t on, uint16_t off){
 
 void PiPCA9685::move(uint8_t channel, int deg){
     float pwm = 570.0 + ((deg/180.0) * 1700.0);
-    //float pwm = (deg/180.0) * (SERVO_MAX_PULSE - SERVO_MIN_PULSE) + SERVO_MIN_PULSE;
     pwm = (4096.0/20000.0) * pwm;
     setPwm(channel, 0, (int) pwm);
 }

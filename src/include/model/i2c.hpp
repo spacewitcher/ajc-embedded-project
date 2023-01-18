@@ -6,8 +6,8 @@
 * @date 17 january 2023
 */
 
-#ifndef QI2C_HPP
-#define QI2C_HPP
+#ifndef I2C_HPP
+#define I2C_HPP
 
 #include <unistd.h>
 #include <stdint.h>
@@ -18,14 +18,14 @@
 #include <linux/i2c-dev.h>
 
 /**
- * @class QI2C
+ * @class I2C
  * @brief Class for controlling the I2C bus
  *
  * This class provides an interface for controlling I2C bus
  * using the Raspberry Pi.
  * 
  */
-class QI2C
+class I2C
 {
 public:
     /**
@@ -33,11 +33,11 @@ public:
      * @param i2c_bus I2C bus number
      * @param i2c_address I2C address of the device
      */
-    QI2C(const uint8_t &i2c_bus, const uint8_t &i2c_address);
+    I2C(const uint8_t &i2c_bus, const uint8_t &i2c_address);
      /**
      * @brief Destructor for the QI2C class
      */
-    ~QI2C();
+    ~I2C();
 
      /**
      * @brief Gets the file descriptor of the I2C device
@@ -242,4 +242,4 @@ private:
     int fd; //The generic connection to user's chosen I2C hardware
 };
 
-#endif // QI2C_HPP
+#endif // I2C_HPP

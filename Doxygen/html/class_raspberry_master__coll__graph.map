@@ -1,6 +1,6 @@
 <map id="RaspberryMaster" name="RaspberryMaster">
-<area shape="rect" id="node1" title="The RaspberryMaster class is used for communication between the Raspberry Pi, the slave device and th..." alt="" coords="7,733,201,869"/>
-<area shape="rect" id="node2" href="$class_controller_logic.html" title="Class for describing the actions that are to be performed by the PCA9685 controller." alt="" coords="5,491,203,671"/>
-<area shape="rect" id="node3" href="$class_pi_p_c_a9685.html" title="Class for controlling the PCA9685 PWM chip." alt="" coords="21,248,187,428"/>
-<area shape="rect" id="node4" href="$class_q_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="25,5,183,185"/>
+<area shape="rect" id="node1" title="The RaspberryMaster class is used for communication between the Master device, the slave device and t..." alt="" coords="5,895,232,1089"/>
+<area shape="rect" id="node2" href="$class_controller_logic.html" title="Class for describing the actions that are to be performed by the PCA9685 controller." alt="" coords="9,623,228,832"/>
+<area shape="rect" id="node3" href="$class_pi_p_c_a9685.html" title="Class for controlling the PCA9685 PWM chip." alt="" coords="11,277,226,560"/>
+<area shape="rect" id="node4" href="$class_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="21,5,217,215"/>
 </map>

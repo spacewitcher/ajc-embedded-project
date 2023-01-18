@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['i2c_18',['i2c',['../class_pi_p_c_a9685.html#a5bdf65f7d24eb4b1be2cb4db6e600e84',1,'PiPCA9685']]],
-  ['i2c_5faddress_19',['i2c_address',['../class_pi_p_c_a9685.html#ad21fc57dc58ca0e0c3427eb692704271',1,'PiPCA9685::i2c_address()'],['../class_q_i2_c.html#a0cf9ead48400fc74bfcffe886685c85f',1,'QI2C::i2c_address()']]],
-  ['i2c_5fbus_20',['i2c_bus',['../class_pi_p_c_a9685.html#a6447d3e6a26368233ea0561f1cd538e8',1,'PiPCA9685::i2c_bus()'],['../class_q_i2_c.html#adddae08773cc6d07db731926b0e1aeac',1,'QI2C::i2c_bus()']]],
-  ['i2cclose_21',['i2cClose',['../class_q_i2_c.html#a5d2725f60a261d862bab86a6998ad775',1,'QI2C']]],
-  ['i2cinit_22',['i2cInit',['../class_q_i2_c.html#a360f8a10dd3c9497c5f4f871f8c1da16',1,'QI2C']]],
-  ['initialize_23',['initialize',['../class_pi_p_c_a9685.html#a1e733542bd1f8961abbe88a3a18f7b73',1,'PiPCA9685']]],
-  ['invrt_24',['INVRT',['../pipca9685_8hpp.html#a08e4407b496696d2d6078957dbabc10f',1,'pipca9685.hpp']]]
+  ['i2c_18',['I2C',['../class_i2_c.html',1,'']]],
+  ['i2c_19',['i2c',['../class_pi_p_c_a9685.html#a4047475f667a3f89ede6c86dd1187a7b',1,'PiPCA9685']]],
+  ['i2c_20',['I2C',['../class_i2_c.html#a28f72b99fdb0ab33187d1c407342f455',1,'I2C']]],
+  ['i2c_2ehpp_21',['i2c.hpp',['../i2c_8hpp.html',1,'']]],
+  ['i2c_5faddress_22',['i2c_address',['../class_i2_c.html#a7c5d619b127595819c4b2b5d69cfc136',1,'I2C::i2c_address()'],['../class_pi_p_c_a9685.html#ad21fc57dc58ca0e0c3427eb692704271',1,'PiPCA9685::i2c_address()']]],
+  ['i2c_5fbus_23',['i2c_bus',['../class_i2_c.html#add3afee0d72ec7f8b32aedd8819f37f5',1,'I2C::i2c_bus()'],['../class_pi_p_c_a9685.html#a6447d3e6a26368233ea0561f1cd538e8',1,'PiPCA9685::i2c_bus()']]],
+  ['i2cclose_24',['i2cClose',['../class_i2_c.html#a0dc6a18a81249c398f49291957b73811',1,'I2C']]],
+  ['i2cinit_25',['i2cInit',['../class_i2_c.html#a55d9ef839142f579f22e82bbe0754505',1,'I2C']]],
+  ['initialize_26',['initialize',['../class_pi_p_c_a9685.html#a1e733542bd1f8961abbe88a3a18f7b73',1,'PiPCA9685']]],
+  ['invrt_27',['INVRT',['../pipca9685_8hpp.html#a08e4407b496696d2d6078957dbabc10f',1,'pipca9685.hpp']]]
 ];

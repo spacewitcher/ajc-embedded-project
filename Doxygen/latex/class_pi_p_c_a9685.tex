@@ -11,12 +11,11 @@ Class for controlling the PCA9685 PWM chip.
 
 
 
-Collaboration diagram for Pi\+PCA9685\+:
-\nopagebreak
+Collaboration diagram for Pi\+PCA9685\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=205pt]{class_pi_p_c_a9685__coll__graph}
+\includegraphics[width=241pt]{class_pi_p_c_a9685__coll__graph}
 \end{center}
 \end{figure}
 \doxysubsection*{Public Member Functions}
@@ -39,18 +38,18 @@ void \mbox{\hyperlink{class_pi_p_c_a9685_aef47addc667224f8ea7f2f4ae6a4b4a2}{move
 \doxysubsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_q_i2_c}{QI2C}} $\ast$ \mbox{\hyperlink{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}{i2c}}
-\begin{DoxyCompactList}\small\item\em I2C interface object. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i2_c}{I2C}} $\ast$ \mbox{\hyperlink{class_pi_p_c_a9685_a4047475f667a3f89ede6c86dd1187a7b}{i2c}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i2_c}{I2C}} interface object. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_a6447d3e6a26368233ea0561f1cd538e8}{i2c\+\_\+bus}}
-\begin{DoxyCompactList}\small\item\em I2C bus number. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i2_c}{I2C}} bus number. \end{DoxyCompactList}\item 
 const uint8\+\_\+t \mbox{\hyperlink{class_pi_p_c_a9685_ad21fc57dc58ca0e0c3427eb692704271}{i2c\+\_\+address}}
-\begin{DoxyCompactList}\small\item\em I2C address of the PCA9685 chip. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i2_c}{I2C}} address of the PCA9685 chip. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Class for controlling the PCA9685 PWM chip. 
 
-This class provides an interface for controlling the PCA9685 PWM chip using the I2C bus on a Raspberry Pi. It allows to change the positions of the servomotors based on the desired angle (in degrees). 
+This class provides an interface for controlling the PCA9685 PWM chip using the \mbox{\hyperlink{class_i2_c}{I2C}} bus on a Raspberry Pi. It allows to change the positions of the servomotors based on the desired angle (in degrees). 
 
 Definition at line 89 of file pipca9685.\+hpp.
 
@@ -69,9 +68,9 @@ Constructor for the \mbox{\hyperlink{class_pi_p_c_a9685}{Pi\+PCA9685}} class.
 
 
 \begin{DoxyParams}{Parameters}
-{\em i2c\+\_\+bus} & I2C bus number \\
+{\em i2c\+\_\+bus} & \mbox{\hyperlink{class_i2_c}{I2C}} bus number \\
 \hline
-{\em i2c\+\_\+address} & I2C address of the PCA9685 chip \\
+{\em i2c\+\_\+address} & \mbox{\hyperlink{class_i2_c}{I2C}} address of the PCA9685 chip \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{class_pi_p_c_a9685_a467ecc8f4328e39888c6667767f4a861}\label{class_pi_p_c_a9685_a467ecc8f4328e39888c6667767f4a861}} 
@@ -168,15 +167,15 @@ Set the PWM frequency for all channels.
 
 
 \doxysubsection{Member Data Documentation}
-\mbox{\Hypertarget{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}\label{class_pi_p_c_a9685_a5bdf65f7d24eb4b1be2cb4db6e600e84}} 
+\mbox{\Hypertarget{class_pi_p_c_a9685_a4047475f667a3f89ede6c86dd1187a7b}\label{class_pi_p_c_a9685_a4047475f667a3f89ede6c86dd1187a7b}} 
 \index{PiPCA9685@{PiPCA9685}!i2c@{i2c}}
 \index{i2c@{i2c}!PiPCA9685@{PiPCA9685}}
 \doxysubsubsection{\texorpdfstring{i2c}{i2c}}
-{\footnotesize\ttfamily \mbox{\hyperlink{class_q_i2_c}{QI2C}}$\ast$ Pi\+PCA9685\+::i2c\hspace{0.3cm}{\ttfamily [private]}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_i2_c}{I2C}}$\ast$ Pi\+PCA9685\+::i2c\hspace{0.3cm}{\ttfamily [private]}}
 
 
 
-I2C interface object. 
+\mbox{\hyperlink{class_i2_c}{I2C}} interface object. 
 
 
 
@@ -190,7 +189,7 @@ Definition at line 138 of file pipca9685.\+hpp.
 
 
 
-I2C address of the PCA9685 chip. 
+\mbox{\hyperlink{class_i2_c}{I2C}} address of the PCA9685 chip. 
 
 
 
@@ -204,7 +203,7 @@ Definition at line 147 of file pipca9685.\+hpp.
 
 
 
-I2C bus number. 
+\mbox{\hyperlink{class_i2_c}{I2C}} bus number. 
 
 
 
@@ -214,4 +213,4 @@ Definition at line 143 of file pipca9685.\+hpp.
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-AJC\+\_\+final-\/master/src/include/model/\mbox{\hyperlink{pipca9685_8hpp}{pipca9685.\+hpp}}\end{DoxyCompactItemize}
+/home/jurek/\+Documents/\+AJC\+\_\+final-\/master/\+AJC\+\_\+final-\/master/src/include/model/\mbox{\hyperlink{pipca9685_8hpp}{pipca9685.\+hpp}}\end{DoxyCompactItemize}

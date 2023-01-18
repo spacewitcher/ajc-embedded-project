@@ -1,5 +1,23 @@
 var searchData=
 [
-  ['qi2c_44',['QI2C',['../class_q_i2_c.html',1,'QI2C'],['../class_q_i2_c.html#a1073b640795353f8a1a000cd19a4235e',1,'QI2C::QI2C()']]],
-  ['qi2c_2ehpp_45',['qi2c.hpp',['../qi2c_8hpp.html',1,'']]]
+  ['raspberrymaster_47',['RaspberryMaster',['../class_raspberry_master.html#aca984103b300342912c9fe6799765f97',1,'RaspberryMaster::RaspberryMaster()'],['../class_raspberry_master.html',1,'RaspberryMaster']]],
+  ['raspberrymaster_2ehpp_48',['raspberrymaster.hpp',['../raspberrymaster_8hpp.html',1,'']]],
+  ['readbit16_49',['readBit16',['../class_i2_c.html#a71bee018115c7a63798fe31ed4428550',1,'I2C']]],
+  ['readbit8_50',['readBit8',['../class_i2_c.html#a56bd86b1737d8406de0e64b22f500ed9',1,'I2C']]],
+  ['readbits16_51',['readBits16',['../class_i2_c.html#a168b3f3c2e39e008ced1602f5ab0c750',1,'I2C']]],
+  ['readbits8_52',['readBits8',['../class_i2_c.html#a1154b0e6eb932b4c0bfa83813cc8f3fd',1,'I2C']]],
+  ['readbyte16_53',['readByte16',['../class_i2_c.html#a65c2af485c703fcec08c50befcfeb178',1,'I2C']]],
+  ['readbyte8_54',['readByte8',['../class_i2_c.html#a963b8fed738d3de5fe888f24056379bb',1,'I2C']]],
+  ['readbytes16_55',['readBytes16',['../class_i2_c.html#a6f427f4ff96b2c24af5a4b4af8b5d3ca',1,'I2C']]],
+  ['readbytes8_56',['readBytes8',['../class_i2_c.html#ae3fa601c2863a9f55db1b70fcc19a343',1,'I2C']]],
+  ['readdoubleword16_57',['readDoubleWord16',['../class_i2_c.html#acb6b43d23110d1e8c2de8e236217c3fe',1,'I2C']]],
+  ['readword16_58',['readWord16',['../class_i2_c.html#a0df38aa572383f4882c92cfb7be4d00b',1,'I2C']]],
+  ['readword16_5f2c_59',['readWord16_2c',['../class_i2_c.html#a4f371c744498f89fc59e51b8d8267419',1,'I2C']]],
+  ['readword8_60',['readWord8',['../class_i2_c.html#ad6c742a0688b8c9a942ee1f0e066c5c3',1,'I2C']]],
+  ['readword8_5f2c_61',['readWord8_2c',['../class_i2_c.html#a70d0744d8e1a84b07ccc843607502977',1,'I2C']]],
+  ['receivedatafromslave_62',['receiveDataFromSlave',['../class_raspberry_master.html#ab7657d78fe1d3a03e248ddd5923c3ff0',1,'RaspberryMaster']]],
+  ['restart_63',['RESTART',['../pipca9685_8hpp.html#acfe2df1dab131d83f22efc4dcc9c6374',1,'pipca9685.hpp']]],
+  ['rx_64',['Rx',['../structbeacon_data.html#a07683681fdc0d21e41610daea15144aa',1,'beaconData']]],
+  ['ry_65',['Ry',['../structbeacon_data.html#a8cdafe0481e6bcb641af1b06d0d56eb7',1,'beaconData']]],
+  ['rz_66',['Rz',['../structbeacon_data.html#a57a27be0e8594e5b1d19c8b113c90f87',1,'beaconData']]]
 ];

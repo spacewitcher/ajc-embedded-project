@@ -1,0 +1,708 @@
+\hypertarget{class_i2_c}{}\doxysection{I2C Class Reference}
+\label{class_i2_c}\index{I2C@{I2C}}
+
+
+Class for controlling the \mbox{\hyperlink{class_i2_c}{I2C}} bus.  
+
+
+
+
+{\ttfamily \#include $<$i2c.\+hpp$>$}
+
+
+
+Collaboration diagram for I2C\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=227pt]{class_i2_c__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_i2_c_a28f72b99fdb0ab33187d1c407342f455}{I2C}} (const uint8\+\_\+t \&\mbox{\hyperlink{class_i2_c_add3afee0d72ec7f8b32aedd8819f37f5}{i2c\+\_\+bus}}, const uint8\+\_\+t \&\mbox{\hyperlink{class_i2_c_a7c5d619b127595819c4b2b5d69cfc136}{i2c\+\_\+address}})
+\begin{DoxyCompactList}\small\item\em Constructor for the QI2C class. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_i2_c_afaad09fa9bdd23623bddbdcd7585a9fe}{$\sim$\+I2C}} ()
+\begin{DoxyCompactList}\small\item\em Destructor for the QI2C class. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i2_c_a7c7d5ffadc6f7e538d2f8a10f822609a}{get\+File\+Descriptor}} ()
+\begin{DoxyCompactList}\small\item\em Gets the file descriptor of the \mbox{\hyperlink{class_i2_c}{I2C}} device. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i2_c_a55d9ef839142f579f22e82bbe0754505}{i2c\+Init}} ()
+\begin{DoxyCompactList}\small\item\em Initializes the \mbox{\hyperlink{class_i2_c}{I2C}} bus. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i2_c_a0dc6a18a81249c398f49291957b73811}{i2c\+Close}} ()
+\begin{DoxyCompactList}\small\item\em Closes the i2c bus. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a56bd86b1737d8406de0e64b22f500ed9}{read\+Bit8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t bit\+Number)
+\begin{DoxyCompactList}\small\item\em Read bit from 8 bit register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a71bee018115c7a63798fe31ed4428550}{read\+Bit16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t bit\+Number)
+\begin{DoxyCompactList}\small\item\em Read bit from 16 bit register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a1154b0e6eb932b4c0bfa83813cc8f3fd}{read\+Bits8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t bit\+Start, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read consecutive bits from 8 bit register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a168b3f3c2e39e008ced1602f5ab0c750}{read\+Bits16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t bit\+Start, uint8\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em Read consecutive bits from 16 bit register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a963b8fed738d3de5fe888f24056379bb}{read\+Byte8}} (uint8\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read a byte from 8 bit register. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a65c2af485c703fcec08c50befcfeb178}{read\+Byte16}} (uint16\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read a byte from 16 bit register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i2_c_ae3fa601c2863a9f55db1b70fcc19a343}{read\+Bytes8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t length, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read consecutive bytes from 8 bit register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_i2_c_a6f427f4ff96b2c24af5a4b4af8b5d3ca}{read\+Bytes16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t length, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Read consecutive bytes from 16 bit register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_i2_c_ad6c742a0688b8c9a942ee1f0e066c5c3}{read\+Word8}} (uint8\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes as a word from 8 bit register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_i2_c_a0df38aa572383f4882c92cfb7be4d00b}{read\+Word16}} (uint16\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes as a word from 16 bit register. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_i2_c_a70d0744d8e1a84b07ccc843607502977}{read\+Word8\+\_\+2c}} (uint8\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes as a word from 8 bit register and swap the byte order. \end{DoxyCompactList}\item 
+uint16\+\_\+t \mbox{\hyperlink{class_i2_c_a4f371c744498f89fc59e51b8d8267419}{read\+Word16\+\_\+2c}} (uint16\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read 2 bytes as a word from 16 bit register and swap the byte order. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{class_i2_c_acb6b43d23110d1e8c2de8e236217c3fe}{read\+Double\+Word16}} (uint16\+\_\+t register\+Address)
+\begin{DoxyCompactList}\small\item\em Read 4 bytes as a double word from 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_aa7e3ced163c4a8565bdaa5bdac8f466d}{write\+Bit8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t bit\+Number, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write a bit to 8 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a627a9ae4c56392cc723d39286c02e2ea}{write\+Bit16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t bit\+Number, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write a bit to 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a29f2bad50831880002e0677f1b6fdb0d}{write\+Bits8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t bit\+Start, uint8\+\_\+t lenght, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write consecutive bits to 8 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a957ccdcd4df652a686ad5d58d70ea24a}{write\+Bits16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t bit\+Start, uint8\+\_\+t lenght, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write consecutive bits to 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a60c53be8f46a1695948bbb98f4bd2d12}{write\+Byte8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write a byte to 8 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_ac446a8e7398f9faa4f7d1b93c84d9d24}{write\+Byte16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write a byte to 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a58597cf90afc444336a1e8496c798bfe}{write\+Bytes8}} (uint8\+\_\+t register\+Address, uint8\+\_\+t lenght, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Write consecutive bytes to 8 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a5e5acf722553f5b39a224f57476d790f}{write\+Bytes16}} (uint16\+\_\+t register\+Address, uint8\+\_\+t lenght, uint8\+\_\+t $\ast$data)
+\begin{DoxyCompactList}\small\item\em Write consecutive bytes to 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a2fbada0dabaa3de92dc18a5736e87483}{write\+Word8}} (uint8\+\_\+t register\+Address, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes as a word to 8 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_ae49ea4e732f9c97bd09062377dff8c0e}{write\+Word16}} (uint16\+\_\+t register\+Address, uint16\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 2 bytes as a word to 16 bit register. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_i2_c_a76cc6f554866fdfdf75cfd52b25f3d33}{write\+Double\+Word}} (uint16\+\_\+t register\+Address, uint32\+\_\+t data)
+\begin{DoxyCompactList}\small\item\em Write 4 bytes as a double word to 16 bit register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_i2_c_add3afee0d72ec7f8b32aedd8819f37f5}{i2c\+\_\+bus}} = 0x1
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i2_c}{I2C}} bus number. \end{DoxyCompactList}\item 
+const uint8\+\_\+t \mbox{\hyperlink{class_i2_c_a7c5d619b127595819c4b2b5d69cfc136}{i2c\+\_\+address}}
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{class_i2_c}{I2C}} address of the device. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{class_i2_c_a63cf4fb190446f9b391f2ea28ef3f2dd}{fd}}
+\begin{DoxyCompactList}\small\item\em The generic connection to user\textquotesingle{}s chosen \mbox{\hyperlink{class_i2_c}{I2C}} hardware. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Class for controlling the \mbox{\hyperlink{class_i2_c}{I2C}} bus. 
+
+This class provides an interface for controlling \mbox{\hyperlink{class_i2_c}{I2C}} bus using the Raspberry Pi. 
+
+Definition at line 28 of file i2c.\+hpp.
+
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i2_c_a28f72b99fdb0ab33187d1c407342f455}\label{class_i2_c_a28f72b99fdb0ab33187d1c407342f455}} 
+\index{I2C@{I2C}!I2C@{I2C}}
+\index{I2C@{I2C}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{I2C()}{I2C()}}
+{\footnotesize\ttfamily I2\+C\+::\+I2C (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t \&}]{i2c\+\_\+bus,  }\item[{const uint8\+\_\+t \&}]{i2c\+\_\+address }\end{DoxyParamCaption})}
+
+
+
+Constructor for the QI2C class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c\+\_\+bus} & \mbox{\hyperlink{class_i2_c}{I2C}} bus number \\
+\hline
+{\em i2c\+\_\+address} & \mbox{\hyperlink{class_i2_c}{I2C}} address of the device \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i2_c_afaad09fa9bdd23623bddbdcd7585a9fe}\label{class_i2_c_afaad09fa9bdd23623bddbdcd7585a9fe}} 
+\index{I2C@{I2C}!````~I2C@{$\sim$I2C}}
+\index{````~I2C@{$\sim$I2C}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{$\sim$I2C()}{~I2C()}}
+{\footnotesize\ttfamily I2\+C\+::$\sim$\+I2C (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Destructor for the QI2C class. 
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i2_c_a7c7d5ffadc6f7e538d2f8a10f822609a}\label{class_i2_c_a7c7d5ffadc6f7e538d2f8a10f822609a}} 
+\index{I2C@{I2C}!getFileDescriptor@{getFileDescriptor}}
+\index{getFileDescriptor@{getFileDescriptor}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{getFileDescriptor()}{getFileDescriptor()}}
+{\footnotesize\ttfamily int I2\+C\+::get\+File\+Descriptor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the file descriptor of the \mbox{\hyperlink{class_i2_c}{I2C}} device. 
+
+\begin{DoxyReturn}{Returns}
+File descriptor of the \mbox{\hyperlink{class_i2_c}{I2C}} device 
+\end{DoxyReturn}
+
+
+Definition at line 46 of file i2c.\+hpp.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{46 \{\textcolor{keywordflow}{return} \mbox{\hyperlink{class_i2_c_a63cf4fb190446f9b391f2ea28ef3f2dd}{fd}};\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_i2_c_a0dc6a18a81249c398f49291957b73811}\label{class_i2_c_a0dc6a18a81249c398f49291957b73811}} 
+\index{I2C@{I2C}!i2cClose@{i2cClose}}
+\index{i2cClose@{i2cClose}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{i2cClose()}{i2cClose()}}
+{\footnotesize\ttfamily void I2\+C\+::i2c\+Close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Closes the i2c bus. 
+
+\mbox{\Hypertarget{class_i2_c_a55d9ef839142f579f22e82bbe0754505}\label{class_i2_c_a55d9ef839142f579f22e82bbe0754505}} 
+\index{I2C@{I2C}!i2cInit@{i2cInit}}
+\index{i2cInit@{i2cInit}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{i2cInit()}{i2cInit()}}
+{\footnotesize\ttfamily void I2\+C\+::i2c\+Init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Initializes the \mbox{\hyperlink{class_i2_c}{I2C}} bus. 
+
+\mbox{\Hypertarget{class_i2_c_a71bee018115c7a63798fe31ed4428550}\label{class_i2_c_a71bee018115c7a63798fe31ed4428550}} 
+\index{I2C@{I2C}!readBit16@{readBit16}}
+\index{readBit16@{readBit16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBit16()}{readBit16()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Bit16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})}
+
+
+
+Read bit from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Number} & The bit number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read bit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a56bd86b1737d8406de0e64b22f500ed9}\label{class_i2_c_a56bd86b1737d8406de0e64b22f500ed9}} 
+\index{I2C@{I2C}!readBit8@{readBit8}}
+\index{readBit8@{readBit8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBit8()}{readBit8()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Bit8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number }\end{DoxyParamCaption})}
+
+
+
+Read bit from 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Number} & The bit number \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read bit 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a168b3f3c2e39e008ced1602f5ab0c750}\label{class_i2_c_a168b3f3c2e39e008ced1602f5ab0c750}} 
+\index{I2C@{I2C}!readBits16@{readBits16}}
+\index{readBits16@{readBits16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBits16()}{readBits16()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Bits16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Start,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read consecutive bits from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Start} & The bit start \\
+\hline
+{\em length} & The number of bits to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read bits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a1154b0e6eb932b4c0bfa83813cc8f3fd}\label{class_i2_c_a1154b0e6eb932b4c0bfa83813cc8f3fd}} 
+\index{I2C@{I2C}!readBits8@{readBits8}}
+\index{readBits8@{readBits8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBits8()}{readBits8()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Bits8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Start,  }\item[{uint8\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+
+
+Read consecutive bits from 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Start} & The bit start \\
+\hline
+{\em length} & The number of bits to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read bits 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a65c2af485c703fcec08c50befcfeb178}\label{class_i2_c_a65c2af485c703fcec08c50befcfeb178}} 
+\index{I2C@{I2C}!readByte16@{readByte16}}
+\index{readByte16@{readByte16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readByte16()}{readByte16()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Byte16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read a byte from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read byte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a963b8fed738d3de5fe888f24056379bb}\label{class_i2_c_a963b8fed738d3de5fe888f24056379bb}} 
+\index{I2C@{I2C}!readByte8@{readByte8}}
+\index{readByte8@{readByte8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readByte8()}{readByte8()}}
+{\footnotesize\ttfamily uint8\+\_\+t I2\+C\+::read\+Byte8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read a byte from 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read byte 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a6f427f4ff96b2c24af5a4b4af8b5d3ca}\label{class_i2_c_a6f427f4ff96b2c24af5a4b4af8b5d3ca}} 
+\index{I2C@{I2C}!readBytes16@{readBytes16}}
+\index{readBytes16@{readBytes16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBytes16()}{readBytes16()}}
+{\footnotesize\ttfamily void I2\+C\+::read\+Bytes16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{length,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read consecutive bytes from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em length} & The number of bytes to read \\
+\hline
+{\em data} & The read bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i2_c_ae3fa601c2863a9f55db1b70fcc19a343}\label{class_i2_c_ae3fa601c2863a9f55db1b70fcc19a343}} 
+\index{I2C@{I2C}!readBytes8@{readBytes8}}
+\index{readBytes8@{readBytes8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readBytes8()}{readBytes8()}}
+{\footnotesize\ttfamily void I2\+C\+::read\+Bytes8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{length,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Read consecutive bytes from 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em length} & The number of bytes to read \\
+\hline
+{\em data} & The read bytes \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_i2_c_acb6b43d23110d1e8c2de8e236217c3fe}\label{class_i2_c_acb6b43d23110d1e8c2de8e236217c3fe}} 
+\index{I2C@{I2C}!readDoubleWord16@{readDoubleWord16}}
+\index{readDoubleWord16@{readDoubleWord16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readDoubleWord16()}{readDoubleWord16()}}
+{\footnotesize\ttfamily uint32\+\_\+t I2\+C\+::read\+Double\+Word16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read 4 bytes as a double word from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read double word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a0df38aa572383f4882c92cfb7be4d00b}\label{class_i2_c_a0df38aa572383f4882c92cfb7be4d00b}} 
+\index{I2C@{I2C}!readWord16@{readWord16}}
+\index{readWord16@{readWord16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readWord16()}{readWord16()}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+::read\+Word16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes as a word from 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a4f371c744498f89fc59e51b8d8267419}\label{class_i2_c_a4f371c744498f89fc59e51b8d8267419}} 
+\index{I2C@{I2C}!readWord16\_2c@{readWord16\_2c}}
+\index{readWord16\_2c@{readWord16\_2c}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readWord16\_2c()}{readWord16\_2c()}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+::read\+Word16\+\_\+2c (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes as a word from 16 bit register and swap the byte order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_ad6c742a0688b8c9a942ee1f0e066c5c3}\label{class_i2_c_ad6c742a0688b8c9a942ee1f0e066c5c3}} 
+\index{I2C@{I2C}!readWord8@{readWord8}}
+\index{readWord8@{readWord8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readWord8()}{readWord8()}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+::read\+Word8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes as a word from 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a70d0744d8e1a84b07ccc843607502977}\label{class_i2_c_a70d0744d8e1a84b07ccc843607502977}} 
+\index{I2C@{I2C}!readWord8\_2c@{readWord8\_2c}}
+\index{readWord8\_2c@{readWord8\_2c}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{readWord8\_2c()}{readWord8\_2c()}}
+{\footnotesize\ttfamily uint16\+\_\+t I2\+C\+::read\+Word8\+\_\+2c (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address }\end{DoxyParamCaption})}
+
+
+
+Read 2 bytes as a word from 8 bit register and swap the byte order. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The read word 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a627a9ae4c56392cc723d39286c02e2ea}\label{class_i2_c_a627a9ae4c56392cc723d39286c02e2ea}} 
+\index{I2C@{I2C}!writeBit16@{writeBit16}}
+\index{writeBit16@{writeBit16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBit16()}{writeBit16()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bit16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write a bit to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Number} & The bit number \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_aa7e3ced163c4a8565bdaa5bdac8f466d}\label{class_i2_c_aa7e3ced163c4a8565bdaa5bdac8f466d}} 
+\index{I2C@{I2C}!writeBit8@{writeBit8}}
+\index{writeBit8@{writeBit8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBit8()}{writeBit8()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bit8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Number,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write a bit to 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Number} & The bit number \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a957ccdcd4df652a686ad5d58d70ea24a}\label{class_i2_c_a957ccdcd4df652a686ad5d58d70ea24a}} 
+\index{I2C@{I2C}!writeBits16@{writeBits16}}
+\index{writeBits16@{writeBits16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBits16()}{writeBits16()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bits16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Start,  }\item[{uint8\+\_\+t}]{lenght,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write consecutive bits to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Start} & The bit start \\
+\hline
+{\em lenght} & The number of bits to write \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a29f2bad50831880002e0677f1b6fdb0d}\label{class_i2_c_a29f2bad50831880002e0677f1b6fdb0d}} 
+\index{I2C@{I2C}!writeBits8@{writeBits8}}
+\index{writeBits8@{writeBits8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBits8()}{writeBits8()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bits8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{bit\+Start,  }\item[{uint8\+\_\+t}]{lenght,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write consecutive bits to 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em bit\+Start} & The bit start \\
+\hline
+{\em lenght} & The number of bits to write \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_ac446a8e7398f9faa4f7d1b93c84d9d24}\label{class_i2_c_ac446a8e7398f9faa4f7d1b93c84d9d24}} 
+\index{I2C@{I2C}!writeByte16@{writeByte16}}
+\index{writeByte16@{writeByte16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeByte16()}{writeByte16()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Byte16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write a byte to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a60c53be8f46a1695948bbb98f4bd2d12}\label{class_i2_c_a60c53be8f46a1695948bbb98f4bd2d12}} 
+\index{I2C@{I2C}!writeByte8@{writeByte8}}
+\index{writeByte8@{writeByte8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeByte8()}{writeByte8()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Byte8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write a byte to 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a5e5acf722553f5b39a224f57476d790f}\label{class_i2_c_a5e5acf722553f5b39a224f57476d790f}} 
+\index{I2C@{I2C}!writeBytes16@{writeBytes16}}
+\index{writeBytes16@{writeBytes16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBytes16()}{writeBytes16()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bytes16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{lenght,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Write consecutive bytes to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em lenght} & The number of bytes to write \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a58597cf90afc444336a1e8496c798bfe}\label{class_i2_c_a58597cf90afc444336a1e8496c798bfe}} 
+\index{I2C@{I2C}!writeBytes8@{writeBytes8}}
+\index{writeBytes8@{writeBytes8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeBytes8()}{writeBytes8()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Bytes8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint8\+\_\+t}]{lenght,  }\item[{uint8\+\_\+t $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Write consecutive bytes to 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em lenght} & The number of bytes to write \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a76cc6f554866fdfdf75cfd52b25f3d33}\label{class_i2_c_a76cc6f554866fdfdf75cfd52b25f3d33}} 
+\index{I2C@{I2C}!writeDoubleWord@{writeDoubleWord}}
+\index{writeDoubleWord@{writeDoubleWord}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeDoubleWord()}{writeDoubleWord()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Double\+Word (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint32\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write 4 bytes as a double word to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_ae49ea4e732f9c97bd09062377dff8c0e}\label{class_i2_c_ae49ea4e732f9c97bd09062377dff8c0e}} 
+\index{I2C@{I2C}!writeWord16@{writeWord16}}
+\index{writeWord16@{writeWord16}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeWord16()}{writeWord16()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Word16 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{register\+Address,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes as a word to 16 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+\mbox{\Hypertarget{class_i2_c_a2fbada0dabaa3de92dc18a5736e87483}\label{class_i2_c_a2fbada0dabaa3de92dc18a5736e87483}} 
+\index{I2C@{I2C}!writeWord8@{writeWord8}}
+\index{writeWord8@{writeWord8}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{writeWord8()}{writeWord8()}}
+{\footnotesize\ttfamily bool I2\+C\+::write\+Word8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{register\+Address,  }\item[{uint16\+\_\+t}]{data }\end{DoxyParamCaption})}
+
+
+
+Write 2 bytes as a word to 8 bit register. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em register\+Address} & The register address \\
+\hline
+{\em data} & The data to write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True if the operation was successful, false otherwise 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_i2_c_a63cf4fb190446f9b391f2ea28ef3f2dd}\label{class_i2_c_a63cf4fb190446f9b391f2ea28ef3f2dd}} 
+\index{I2C@{I2C}!fd@{fd}}
+\index{fd@{fd}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{fd}{fd}}
+{\footnotesize\ttfamily int I2\+C\+::fd\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The generic connection to user\textquotesingle{}s chosen \mbox{\hyperlink{class_i2_c}{I2C}} hardware. 
+
+
+
+Definition at line 242 of file i2c.\+hpp.
+
+\mbox{\Hypertarget{class_i2_c_a7c5d619b127595819c4b2b5d69cfc136}\label{class_i2_c_a7c5d619b127595819c4b2b5d69cfc136}} 
+\index{I2C@{I2C}!i2c\_address@{i2c\_address}}
+\index{i2c\_address@{i2c\_address}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{i2c\_address}{i2c\_address}}
+{\footnotesize\ttfamily const uint8\+\_\+t I2\+C\+::i2c\+\_\+address\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_i2_c}{I2C}} address of the device. 
+
+
+
+Definition at line 237 of file i2c.\+hpp.
+
+\mbox{\Hypertarget{class_i2_c_add3afee0d72ec7f8b32aedd8819f37f5}\label{class_i2_c_add3afee0d72ec7f8b32aedd8819f37f5}} 
+\index{I2C@{I2C}!i2c\_bus@{i2c\_bus}}
+\index{i2c\_bus@{i2c\_bus}!I2C@{I2C}}
+\doxysubsubsection{\texorpdfstring{i2c\_bus}{i2c\_bus}}
+{\footnotesize\ttfamily const uint8\+\_\+t I2\+C\+::i2c\+\_\+bus = 0x1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\mbox{\hyperlink{class_i2_c}{I2C}} bus number. 
+
+
+
+Definition at line 233 of file i2c.\+hpp.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+/home/jurek/\+Documents/\+AJC\+\_\+final-\/master/\+AJC\+\_\+final-\/master/src/include/model/\mbox{\hyperlink{i2c_8hpp}{i2c.\+hpp}}\end{DoxyCompactItemize}
