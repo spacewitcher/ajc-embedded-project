@@ -20,13 +20,26 @@ void RaspberryMaster::receiveDataFromSlave()
 
     beaconData data;
     json jsonData = {};
+    std::vector<json> jsonDataBuffer; // buffer to store json data
+    
+    // Initialize the timer
+    auto start = std::chrono::high_resolution_clock::now();
+    auto end = start + std::chrono::seconds(30);
 
     while(1)
 
     {
+        // Create three threads, one for detecting presence, one for detecting data, one for transferring data
+        std::thread presence_detection;
+        std::thread data_detection;
+        std::thread data_transfer;
+
         serialPuts(fd, "p"); // Send confirmation back to the slave
 
-        sleep(5);
+        if (serialDataAvail(fd) < 0) continue; // if no data available from slave, continue
+
+        std::this_thread::sleep_for(std::chrono::seconds(5)); // sleep for 5 seconds
+
 
         char* data_ptr = (char*)&data;
         for(int i=0; i< (int)sizeof(beaconData); i++) 
@@ -34,21 +47,41 @@ void RaspberryMaster::receiveDataFromSlave()
             *(data_ptr++) = serialGetchar(fd); // Receiving the data from the slave
         }
 
-        servomotors->dataDetected(); // Move the blue flag after the data is received
+        data_detection = std::thread(&ControllerLogic::dataDetected, servomotors); // Data detected, detach thread 1, move blue flag
+        data_detection.detach();
+        //servomotors->dataDetected();
 
-        if(data.detect == 1)
+        if (data.detect == 1)
         {
-            servomotors->objectDetected(); // Move the yellow flag after the presence is detected
+            presence_detection = std::thread(&ControllerLogic::objectDetected, servomotors); // Object detected, detach thread 2, move yellow flag
+            presence_detection.detach();
+            //servomotors->objectDetected();
         }
-
+        
+        jsonDataBuffer_mutex.lock();
         changeFormatToJSON(data, jsonData);
+        jsonDataBuffer_mutex.unlock();
 
-        std::cout << jsonData.dump() << std::endl;
+        jsonDataBuffer.push_back(jsonData); // store json data in buffer
+
+        for(auto i : jsonDataBuffer) {
+                std::cout << std::endl;
+                std::cout << i.dump() << std::endl;
+        }
 
         serialPuts(fd, "A"); // Send confirmation back to the slave
 
-        sendDataToServer(jsonData, "135.125.14.131", 5009);
-
+        if (std::chrono::high_resolution_clock::now() > end) { //if a minute passed
+            //servomotors->dataTransferred();
+            data_transfer = std::thread(&ControllerLogic::dataTransferred, servomotors);// Data is going to be transferred, move blue flag
+            data_transfer.detach();
+            jsonDataBuffer_mutex.lock();
+            sendDataToServer(jsonDataBuffer, "135.125.14.131", 5009);
+            jsonDataBuffer_mutex.unlock();
+            jsonDataBuffer.clear(); //clear the buffer
+            start = std::chrono::high_resolution_clock::now(); // reinitialize the clock
+            end = start + std::chrono::seconds(30);
+        }
     }
 
     serialClose(fd);
@@ -68,7 +101,7 @@ void RaspberryMaster::changeFormatToJSON(beaconData data, json &jsonData)
 }
 
 
-void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int port)
+void RaspberryMaster::sendDataToServer(std::vector<json> jsonDataBuffer, std::string serverIP, int port)
 {
     int sockfd;
     struct sockaddr_in servaddr;
@@ -84,7 +117,7 @@ void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int 
     memset(&servaddr, '\0', sizeof(servaddr));
     servaddr.sin_family = AF_INET;
     servaddr.sin_port = port;
-    servaddr.sin_addr.s_addr= inet_addr(serverIP);
+    servaddr.sin_addr.s_addr= inet_addr(serverIP.c_str());
 
     // Connect to server
     int connectToServer = connect(sockfd, (struct sockaddr*) &servaddr, sizeof(servaddr));
@@ -97,10 +130,12 @@ void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int 
         std::cout << "Successfully connected to the server" << std::endl;
     }
 
-    servomotors->dataTransferred(); // Move the blue flag before the data is transferred to the server
-    
-    // Send JSON data to server
-    std::string jsonString = jsonData.dump();
+    // Convert JSON data buffer to a single string
+    json jsonDataToSend;
+    jsonDataToSend["data"] = jsonDataBuffer;
+    std::string jsonString = jsonDataToSend.dump();
+
+     // Send JSON data to server
     int writeJSON = write(sockfd, jsonString.c_str(), jsonString.length());
 
     if (writeJSON < 0) {
@@ -109,17 +144,8 @@ void RaspberryMaster::sendDataToServer(json jsonData, const char* serverIP, int 
         std::cout << "Sent JSON data to server: " << jsonString << std::endl;
     }
 
-    // Print contents received from server
-    char buffer[1024];
-    int n = read(sockfd, buffer, sizeof(buffer));
-    if (n < 0) {
-        std::cerr << "Error: Failed to receive data from server" << std::endl;
-    } else {
-        buffer[n] = '\0';
-        std::cout << "Received from server: " << buffer << std::endl;
-    }
-
     // Close socket
     close(sockfd);
 };
+
 

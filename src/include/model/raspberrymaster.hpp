@@ -11,15 +11,16 @@
 #ifndef	__RASPBERRYMASTER_HPP__
 #define	__RASPBERRYMASTER_HPP__
 
-//#include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <json.hpp>
 #include <iostream>
-//#include <unistd.h>
 #include <termios.h>
 #include "wiringSerial.h"
+#include <thread>
+#include <mutex>
+#include <condition_variable>
 
 #include "controllerlogic.hpp"
 
@@ -73,9 +74,8 @@ class RaspberryMaster {
         void receiveDataFromSlave();
 
         /**
-         * @brief Method for changing the format of the data to JSON.
+         * @brief Method for creating a thread for the object detection.
          * @param data The data received from the slave device in the form of a beaconData struct.
-         * @param jsonData The json object that the data will be stored in.
          */
         void changeFormatToJSON(beaconData data, json& jsonData);
 
@@ -85,13 +85,17 @@ class RaspberryMaster {
          * @param serverIP The IP address of the server.
          * @param port The port number that the data will be sent to.
          */
-        void sendDataToServer(json jsonData, const char* serverIP, int port);
+        void sendDataToServer(std::vector<json> jsonDataBuffer, std::string serverIP, int port);
     
     private:
         /**
          * @brief Pointer to the ControllerLogic class.
          */
         ControllerLogic *servomotors;
+         /**
+         * @brief Mutex variable to protect the JSON data buffer in multithreading.
+         */
+        std::mutex jsonDataBuffer_mutex;
 
 };
 

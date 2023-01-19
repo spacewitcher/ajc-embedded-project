@@ -1,14 +1,14 @@
 # Si la structure des modules change dans le projet changer MODULES en conséquence
 MODULES 	:= app io misc model
 # Permet d'inclure des librairie au linker ex -lsqlite3
-LINK_LIB	:=
+LINK_LIB	:= -pthread
 # Permet d'inclure des librairie au linker pour les tests ex -lsqlite3
 TEST_LINK_LIB:=
 ifeq ($(CROSS_COMPILE),1)
 # remplacer le compilateur utilisé pour la cross-compilation ici
 	CC	:= ../cross-pi-gcc-10.3.0-2/bin/arm-linux-gnueabihf-g++
 # Nom de l'exécutable cross-compile
-	EXEC		:= app-master-final
+	EXEC		:= app-master-multi
 else 
 	CC	:= g++
 # Nom de l'exécutable

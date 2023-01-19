@@ -1,6 +1,4 @@
 #include "controllerlogic.hpp"
-#include <iostream>
-#include <chrono>
 
 #define SWEEP_TIME 3 // Duration of the alternation between 45 and 135 degrees for the blue flag
 
