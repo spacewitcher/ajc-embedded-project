@@ -1,6 +1,8 @@
 /**
  * @file raspberrymaster.hpp
  * @author Georges Schuhl
+ * @author Nicolas Chataignon
+ * @author Houssein Mariam
  * @brief This file contains the declaration of the RaspberryMaster class and the beaconData struct.
  *        The RaspberryMaster class is used for communication between the Raspberry Pi and the slave device.
  *        The beaconData struct contains data received from the slave device, such as temperature, pressure, humidity, etc.
@@ -15,12 +17,10 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <json.hpp>
-#include <iostream>
 #include <termios.h>
-#include "wiringSerial.h"
 #include <thread>
 #include <mutex>
-#include <condition_variable>
+#include "wiringSerial.h"
 
 #include "controllerlogic.hpp"
 
@@ -31,21 +31,21 @@ using json = nlohmann::json;
  * axes positions, detection status and a timestamp.
  */
 struct beaconData {
-    /** temperature in degree celsius */
+    /** Temperature in degree celsius */
     float temperature;
-    /** pressure in pascal*/
+    /** Tressure in pascals*/
     float pressure;
-    /** humidity in percentage*/
+    /** Humidity in percentage*/
     float humidity;
-    /** x axis rotation */
+    /** X axis rotation */
     float Rx;
-    /** y axis rotation */
+    /** Y axis rotation */
     float Ry;
-    /** z axis rotation */
+    /** Z axis rotation */
     float Rz;
-    /** detection status*/
+    /** Detection status*/
     int detect;
-    /** timestamp*/
+    /** Timestamp*/
     time_t timestamp;
 };
 

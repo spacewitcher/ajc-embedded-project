@@ -1,7 +1,10 @@
 /**
 * @file pipca9685.hpp
+* @author Georges Schuhl
+* @author Nicolas Chataignon
+* @author Houssein Mariam
 * @author manfredipist <https://github.com/manfredipist/QI2CProtocol>
-* @brief This file contains the class definition for PiPCA968
+* @brief This file contains the class definition for PiPCA9685
 * @version 1.0
 * @date 17 january 2023
 *

@@ -1,5 +1,0 @@
-<map id="ControllerLogic" name="ControllerLogic">
-<area shape="rect" id="node1" title="Class for describing the actions that are to be performed by the PCA9685 controller." alt="" coords="5,623,224,832"/>
-<area shape="rect" id="node2" href="$class_pi_p_c_a9685.html" title="Class for controlling the PCA9685 PWM chip." alt="" coords="7,277,222,560"/>
-<area shape="rect" id="node3" href="$class_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="17,5,213,215"/>
-</map>

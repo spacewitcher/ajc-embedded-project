@@ -1,4 +1,0 @@
-<map id="PiPCA9685" name="PiPCA9685">
-<area shape="rect" id="node1" title="Class for controlling the PCA9685 PWM chip." alt="" coords="5,277,220,560"/>
-<area shape="rect" id="node2" href="$class_i2_c.html" title="Class for controlling the I2C bus." alt="" coords="15,5,211,215"/>
-</map>
